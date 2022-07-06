@@ -1,12 +1,15 @@
 import React from 'react';
-import AllItem from '../AllItem/AllItem';
+
+import Items from '../Items/Items'
+import './Service.css'
 
 const Service = () => {
     return (
-        <div className='my-10'>
-           <h2 className='text-4xl text-black text-center font-bold'>What kind of Foods we serve for you</h2> 
+        <div className='my-10 section-bg'>
+           <h2 className='text-4xl text-black pt-10 text-center font-bold'>What kind of Foods we serve for you</h2> 
            <p className='text-center mt-4'>Who are in extremely love with eco friendly system.</p>
-           <AllItem />
+       
+           <Items />
         </div>
     );
 };

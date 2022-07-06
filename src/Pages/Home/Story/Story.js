@@ -3,7 +3,7 @@ import burger from '../../../assets/burger.jpg'
 
 const Story = () => {
     return (
-        <div class="hero lg:my-24 my-20">
+        <div class="hero  lg:my-24 my-20">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <img src={burger} class="max-w-sm  mb-16 lg:mb-0 shadow-2xl" alt='' />
     <div className='max-w-xl'>

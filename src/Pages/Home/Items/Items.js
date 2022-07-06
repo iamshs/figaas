@@ -2,108 +2,116 @@ import { useState } from 'react'
 import { Tab } from '@headlessui/react'
 
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Example() {
   let [categories] = useState({
-    Recent: [
+    AllMenu: [
       {
         id: 1,
-        title: 'Does drinking coffee make you smarter?',
-        date: '5h ago',
-        commentCount: 5,
-        shareCount: 2,
+        title: 'Cappuccion',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
+      },
+      {
+        id: 1,
+        title: 'Americano',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
       {
         id: 2,
-        title: "So you've bought coffee... now what?",
-        date: '2h ago',
-        commentCount: 3,
-        shareCount: 2,
+        title: 'Ristretto',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
+      },
+      {
+        id: 3,
+        title: 'Mocha',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
+      },
+      {
+        id: 4,
+        title: 'Piccolo Latte',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
+      },
+      {
+        id: 4,
+        title: 'Macchiato',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
     ],
-    Popular: [
+    Breakfast: [
       {
         id: 1,
-        title: 'Is tech making coffee better or worse?',
-        date: 'Jan 7',
-        commentCount: 29,
-        shareCount: 16,
+        title: 'Cappuccion',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
       {
         id: 2,
-        title: 'The most innovative things happening in coffee',
-        date: 'Mar 19',
-        commentCount: 24,
-        shareCount: 12,
+        title: 'Mocha',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
     ],
-    Trending: [
+    Lunch: [
       {
         id: 1,
-        title: 'Ask Me Anything: 10 answers to your questions about coffee',
-        date: '2d ago',
-        commentCount: 9,
-        shareCount: 5,
-      },
-      {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: '4d ago',
-        commentCount: 1,
-        shareCount: 2,
+        title: 'Piccolo Latte',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
     ],
-    Trendingggs: [
+    Dinner: [
       {
         id: 1,
-        title: 'Ask Me Anything: 10 answers to your questions about coffee',
-        date: '2d ago',
-        commentCount: 9,
-        shareCount: 5,
+        title: 'Americano',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
-      {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: '4d ago',
-        commentCount: 1,
-        shareCount: 2,
-      },
+     
     ],
-    Trendingg: [
+    BudgetMeal: [
       {
         id: 1,
-        title: 'Ask Me Anything: 10 answers to your questions about coffee',
-        date: '2d ago',
-        commentCount: 9,
-        shareCount: 5,
+        title: 'Macchiato',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
+     
+    ],
+    Buffet: [
       {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: '4d ago',
-        commentCount: 1,
-        shareCount: 2,
+        id: 1,
+        title: 'Ristretto',
+        price: 49,
+        details: 'Usage of the Internet is becoming more common due to rapid advance',
       },
+     
     ],
   })
 
   return (
-    <div className="w-full  max-w-6xl  mx-auto px-2 py-16 sm:px-0">
+    <div className="w-full   max-w-5xl  mx-auto px-2 py-16 sm:px-0">
       <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl bg-black  p-1">
+        <Tab.List className="flex lg:mx-5 space-x-1 rounded-xl bg-base-100  p-1">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
                   'w-full h-24 rounded-lg py-2.5 text-sm font-medium leading-5    ',
-                  'ring-white ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2 text-white',
+                  'ring-white ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2 text-black',
                   selected
-                    ? 'bg-primary text-white shadow'
-                    : ' hover:bg-white hover:text-black'
+                    ? 'bg-primary text-secondary shadow'
+                    : ' hover:bg-black hover:text-white'
                 )
               }
             >
@@ -116,36 +124,23 @@ export default function Example() {
             <Tab.Panel
               key={idx}
               className={classNames(
-                'rounded-xl bg-white p-3',
+                'rounded-xl  p-3',
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <ul>
+              <ul className='grid lg:grid-cols-2 grid-cols-1 gap-10 lg:ml-6 mt-10'>
                 {posts.map((post) => (
-                  <li
-                    key={post.id}
-                    className="relative rounded-md p-3 hover:bg-gray-100"
-                  >
-                    <h3 className="text-sm font-medium leading-5">
-                      {post.title}
-                    </h3>
-
-                    <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
-                      <li>{post.date}</li>
-                      <li>&middot;</li>
-                      <li>{post.commentCount} comments</li>
-                      <li>&middot;</li>
-                      <li>{post.shareCount} shares</li>
-                    </ul>
-
-                    <a
-                      href="#"
-                      className={classNames(
-                        'absolute inset-0 rounded-md',
-                        'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
-                      )}
-                    />
-                  </li>
+                <div class="card max-w-md bg-base-100 shadow-sm">
+                <div className='flex p-6'>
+                <div class="">
+                  <h2 class="card-title my-3">{post.title}</h2>
+                  <p className='text-gray-500'>{post.details}</p>
+                </div>
+                <div>
+                  <h3 className='card-title  text-primary'> <span>$</span>{post.price}</h3>
+                </div>
+                </div>
+              </div>
                 ))}
               </ul>
             </Tab.Panel>
